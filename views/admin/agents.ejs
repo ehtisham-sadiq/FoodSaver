@@ -1,0 +1,45 @@
+<main>
+    <%- include('../partials/adminSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Dashboard</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Agent Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Joined Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i<agents.length; i++) { %>
+                                <tr>
+                                    <th scope="row"> <%= i+1 %> </th>
+                                    <td> <%= agents[i].firstName + " " + agents[i].lastName %> </td>
+                                    <td> <%= agents[i].email %> </td>
+                                    <td> <%= agents[i].phone %> </td>
+                                    <td> <%= agents[i].joinedTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

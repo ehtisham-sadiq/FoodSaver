@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FoodSaver</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .contact-header {
+            background-color: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .contact-header h1 {
+            color: #007bff; /* Blue color */
+        }
+        .contact-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        .contact-form {
+            margin-top: 2rem;
+        }
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #666666;
+        }
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 1rem;
+        }
+        .contact-info li::before {
+            content: "✓";
+            color: #007bff;
+            margin-right: 0.5rem;
+        }
+        .contact-email {
+            font-size: 1.2rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="contact-header">
+            <h1>Contact Us</h1>
+        </header>
+
+        <section class="contact-content">
+            <h4>We would love to hear from you!</h4>
+            <div class="contact-info">
+                <p>For any concerns, please call our toll-free numbers between 9 AM to 6 PM:</p>
+                <ul>
+                    <li>0300-12345678 (within Pakistan)</li>
+                    <li>0300-12345679 (within Pakistan)</li>
+                </ul>
+                <p>You can also visit our offices to get insights on how our agents serve food at different places:</p>
+                <ul>
+                    <li>XYZ Lahore, Punjab</li>
+                    <li>XYZ Okara, Punjab</li>
+                </ul>
+                <p>If you have any suggestions or feedback, feel free to email us at:</p>
+                <p class="contact-email">xyz@gmail.com</p>
+            </div>
+
+            <form class="contact-form" action="/contact" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

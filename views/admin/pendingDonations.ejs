@@ -1,0 +1,49 @@
+<main>
+    <%- include('../partials/adminSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Pending Donations</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Donor Name</th>
+                                <th scope="col">Food Type</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i<pendingDonations.length; i++) { %>
+                                <tr>
+                                    <th scope="row"> <%= i+1 %> </th>
+                                    <td> <%= pendingDonations[i].donor.firstName + " " + pendingDonations[i].donor.lastName %> </td>
+                                    <td> <%= pendingDonations[i].foodType %> </td>
+                                    <td> <%= pendingDonations[i].quantity %> </td>
+                                    <td class="fw-bold text-<%= pendingDonations[i].status %>"> <%= pendingDonations[i].status %> </td>
+                                    <td>
+                                        <a href="/admin/donation/view/<%= pendingDonations[i]._id %>" class="btn btn-sm btn-primary">View</a>
+                                    </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

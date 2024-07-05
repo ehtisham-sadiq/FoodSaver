@@ -1,0 +1,65 @@
+<main>
+    <%- include('../partials/adminSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h4 class="m-0 color-theme d-inline-block">Admin - Dashboard</h4>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-12">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card bg-primary text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numAdmins %></div>
+                            <div class="fs-5">Admins</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-success text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numDonors %></div>
+                            <div class="fs-5">Donors</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-primary text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numAgents %></div>
+                            <div class="fs-5">Agents</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-success text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numPendingDonations %></div>
+                            <div class="fs-5">New Donation Requests</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-warning text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numAcceptedDonations %></div>
+                            <div class="fs-5">Donations to Assign</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-danger text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numAssignedDonations %></div>
+                            <div class="fs-5">Donations Not Collected</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-success text-white shadow-sm h-100 d-flex flex-column justify-content-center align-items-center" style="padding: 40px; border-radius: 20px;">
+                            <div class="fs-1"><%= numCollectedDonations %></div>
+                            <div class="fs-5">Donations Collected</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

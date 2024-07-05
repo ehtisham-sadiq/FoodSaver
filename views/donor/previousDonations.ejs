@@ -1,0 +1,49 @@
+<main>
+    <%- include('../partials/donorSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Previous Donations</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover shadow-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Food Type</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Cooking Time</th>
+                                <th scope="col">Agent Assigned</th>
+                                <th scope="col">Collection Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i<previousDonations.length; i++) { %>
+                                <tr>
+                                    <th scope="row"> <%= i+1 %> </th>
+                                    <td> <%= previousDonations[i].foodType %> </td>
+                                    <td> <%= previousDonations[i].quantity %> </td>
+                                    <td class="fw-bold text-<%= previousDonations[i].status %>"> <%= previousDonations[i].status %> </td>
+                                    <td> <%= previousDonations[i].cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+                                    <td> <%= previousDonations[i].agent.firstName + " " + previousDonations[i].agent.lastName %> </td>
+                                    <td> <%= previousDonations[i].collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>

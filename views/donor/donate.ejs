@@ -1,0 +1,69 @@
+<main>
+    <%- include('../partials/donorSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Donate Food</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-8 mx-auto">
+                <form action="/donor/donate" method="POST" class="card border shadow-sm rounded p-4">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="food" class="form-label">Food Type</label>
+                            <input type="text" name="donation[foodType]" class="form-control" id="food" placeholder="Enter food.." required autofocus>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="text" name="donation[quantity]" class="form-control" id="quantity" placeholder="Enter quantity of food.." required>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label for="time" class="form-label">Time of Cooking</label>
+                                <input type="datetime-local" name="donation[cookingTime]" class="form-control" id="time" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-8">
+                                <label for="address" class="form-label">Address to Collect</label>
+                                <input type="text" name="donation[address]" class="form-control" id="address" placeholder="Enter address.." value="<%= currentUser.address %>" required>
+                            </div>
+
+                            <div class="mb-3 col-md-4">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="number" name="donation[phone]" class="form-control" id="phone" placeholder="Enter phone.." value="<%= currentUser.phone %>" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="msg" class="form-label">Optional Message</label>
+                            <textarea type="text" name="donation[donorToAdminMsg]" class="form-control" id="msg" placeholder="Write a message to the recipient (optional).."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Submit Donation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+const now = new Date();
+const year = now.getFullYear();
+const month = String(now.getMonth() + 1).padStart(2, '0'); // Add leading zero for single-digit months
+const day = String(now.getDate()).padStart(2, '0');
+const hour = String(now.getHours()).padStart(2, '0');
+const minute = String(now.getMinutes()).padStart(2, '0');
+
+document.getElementById("time").value = `${year}-${month}-${day}T${hour}:${minute}`;

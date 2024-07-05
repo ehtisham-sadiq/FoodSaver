@@ -1,0 +1,51 @@
+<main>
+    <%- include('../partials/agentSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Previous Collections</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Donor Name</th>
+                                <th scope="col">Collection Address</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(let i=0; i<previousCollections.length; i++) { %>
+                                <tr>
+                                    <th scope="row"> <%= i+1 %> </th>
+                                    <td> <%= previousCollections[i].donor.firstName + " " + previousCollections[i].donor.lastName %> </td>
+                                    <td> <%= previousCollections[i].address %> </td>
+                                    <td> <%= previousCollections[i].phone %> </td>
+                                    <td><a href="/agent/collection/view/<%= previousCollections[i]._id %>" class="btn btn-primary">View</a></td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- **Improvements:** -->
+
+<!-- * **Responsiveness:** Added `table-responsive` class for better table display on smaller screens. -->
+<!-- * **Table Borders:** Used `table-bordered` class for clearer visual separation of table cells. -->
+<!-- * **Button Styling:** Used Bootstrap button class (`btn-primary`) for improved styling of the view button.  -->

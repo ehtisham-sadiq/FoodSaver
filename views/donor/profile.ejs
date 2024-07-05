@@ -1,0 +1,64 @@
+<main>
+    <%- include('../partials/donorSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Profile</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-8 mx-auto">
+                <form action="/donor/profile?_method=PUT" method="POST" class="card border shadow-sm rounded p-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="first-name" class="form-label">First Name</label>
+                                <input type="text" name="donor[firstName]" class="form-control" id="first-name" placeholder="Enter first name.." value="<%= currentUser.firstName %>" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="last-name" class="form-label">Last Name</label>
+                                <input type="text" name="donor[lastName]" class="form-control" id="last-name" placeholder="Enter last name.." value="<%= currentUser.lastName %>" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" value="<%= currentUser.email %>" disabled>
+                        </div>
+
+                        <div class="mb-3">
+                            <span class="d-inline-block me-2">Gender:</span>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="donor[gender]" id="male" value="male" <% if(currentUser.gender=='male'){%> checked <%}%>>
+                                <label class="form-check-label" for="male">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="donor[gender]" id="female" value="female" <% if(currentUser.gender=='female'){%> checked <%}%>>
+                                <label class="form-check-label" for="female">Female</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" name="donor[address]" class="form-control" id="address" placeholder="Enter address.." value="<%= currentUser.phone %>">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="number" name="donor[phone]" class="form-control" id="phone" placeholder="Enter phone.." value="<%= currentUser.phone %>">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Update Profile</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</main>

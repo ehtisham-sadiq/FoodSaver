@@ -1,0 +1,43 @@
+<main>
+    <%- include('../partials/donorSidebar') %>
+
+    <div id="main-wrapper" class="container-fluid">
+
+        <div class="row bg-white shadow-sm p-3">
+            <div class="col-md-auto">
+                <span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+            </div>
+            <div class="col-md">
+                <h5 class="m-0 color-theme d-inline-block">Dashboard</h5>
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card bg-success text-white text-center p-4 rounded h-100">
+                    <div class="fs-1"><%= numCollectedDonations %></div>
+                    <div class="fs-5">Collected Donations</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card bg-primary text-white text-center p-4 rounded h-100">
+                    <div class="fs-1"><%= numPendingDonations %></div>
+                    <div class="fs-5">Pending Requests</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card bg-success text-white text-center p-4 rounded h-100">
+                    <div class="fs-1"><%= numAcceptedDonations %></div>
+                    <div class="fs-5">Accepted Donations</div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-3">
+                <div class="card bg-danger text-white text-center p-4 rounded h-100">
+                    <div class="fs-1"><%= numAssignedDonations %></div>
+                    <div class="fs-5">Uncollected Donations</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
