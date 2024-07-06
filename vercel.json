@@ -9,7 +9,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.js"
+      "dest": "/app.js"
     }
-  ]
+  ],
+  "env": {
+    "PORT": "5002",
+    "MONGO_URI": "@mongo_uri",
+    "SECRET": "@secret"
+  }
 }
