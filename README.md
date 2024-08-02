@@ -99,7 +99,6 @@ For running the application:
 
 ## Useful Links
 
-- Demo: https://food-aid-aayush.herokuapp.com/
 - Github Repo: https://github.com/aayush301/Food-donation-management-system
 - Nodejs download: https://nodejs.org/
 - VS Code download: https://code.visualstudio.com/
